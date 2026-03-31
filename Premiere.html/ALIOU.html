@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Le Jardin Gourmet</title>
+    <style>
+        /* CSS INTERNE -*/
+
+        /* 1. RESET ET BASES */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: maroon;
+            background-color: #f9fbf9;
+            /* Un blanc légère */
+        }
+
+        /* 2. HEADER : Disposé horizontalement avec Flexbox */
+        header {
+            display: flex;
+            justify-content: space-between;
+            /* Logo à gauche, Menu à droite */
+            align-items: center;
+            padding: 20px 5%;
+            background-color: white;
+            border-bottom: 2px solid #e0e0e0;
+            position: initial;
+
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-gauche {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-cercle {
+            width: 50px;
+            height: 50px;
+            background-color: maroon;
+
+            color: white(168, 168, 133);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .titre-restaurant h1 {
+            font-size: 22px;
+            color: maroon;
+        }
+
+        .titre-restaurant p {
+            font-size: 12px;
+            font-style:
+                color maroon;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: maroon;
+            margin-left: 20px;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: maroon;
+        }
+
+        /* 3. SECTION HERO : Deux colonnes */
+        .hero {
+            display: flex;
+            align-items: center;
+            padding: 60px 5%;
+            background-color: whitesmoke;
+            min-height: 500px;
+        }
+
+        .hero-contenu {
+            flex: 1;
+            padding-right: 30px;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .badge {
+            background-color: maroon;
+            color: rgb(232, 232, 113);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin: 20px 0;
+            color: maroon;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: gray;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-flexbox;
+            margin-right: 15px;
+        }
+
+        .btn-principal {
+            background-color: maroon;
+            color: white;
+        }
+
+        .btn-secondaire {
+            border: 2px solid maroon;
+            color: maroon;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 20px;
+            box-shadow: 0 30px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 4. SECTION "POURQUOI VENIR CHEZ NOUS" : 4 cartes alignées */
+        .section-titre {
+            text-align: center;
+            padding: 70px 8% 25px;
+        }
+
+        .avantages {
+            display: flex;
+            gap: 20px;
+            padding: 0 5% 60px;
+        }
+
+        .carte-avantage {
+            flex: 1;
+            background: rgb(243, 230, 206);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .carte-avantage h3 {
+            color: maroon;
+            margin-bottom: 15px;
+        }
+
+
+        /* 5. SECTION SPÉCIALITÉS : Grille de 6 cartes */
+        .specialites {
+            background-color: #ffffff;
+            padding: 60px 5%;
+        }
+
+        .grille-specialites {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            /* 3 colonnes */
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .plat-card {
+            border: 10px solid #eee;
+            border-radius: 35px;
+
+
+        }
+
+        .plat-card:hover {
+            box-shadow: 20px;
+        }
+
+        .plat-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .plat-info {
+            padding: 20px;
+        }
+
+        .plat-info h4 color maroon .stat-bloc h3 {
+            font-size: 36px;
+        }
+
+        /* 7. SECTION RÉSERVATION / CONTACT */
+        .reservation {
+            padding: 60px 5%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .info-contact {
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            font-size: 14px;
+        }
+
+        /* 8. FOOTER */
+        footer {
+            display: flex;
+            justify-content: space-between;
+            padding: 30px 5%;
+            background-color: maroon;
+            color: white;
+            font-size: 13px;
+        }
+
+        .footer-liens a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="header-gauche">
+            <div class="logo-cercle">JG</div>
+            <div class="titre-restaurant">
+                <h1>Le Jardin Gourmet</h1>
+
+            </div>
+        </div>
+        <nav>
+            <a href="#">Accueil</a>
+            <a href="#">Menu</a>
+            <a href="#">Spécialités</a>
+            <a href="#">Réservation</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-contenu">
+            <span class="badge">Bienvenue</span>
+            <h2>L'art de la cuisine au saveur naturel</h2>
+            <p>Découvrez une expérience culinaire unique où chaque ingrédient raconte une histoire de fraîcheur et de
+                passion.</p>
+            <div class="hero-boutons">
+                <a href="#" class="btn btn-principal">Réserver une table</a>
+                <a href="#" class="btn btn-secondaire">Voir le menu</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="https://i.pinimg.com/736x/33/40/dc/3340dcba2f28b4ebca54d94dccf32f02.jpg"
+                alt="Intérieur du restaurant">
+        </div>
+    </section>
+
+    <div class="section-titre">
+        <h2>Pourquoi venir chez nous?</h2>
+        <p>L'excellence dans notre assiette, une ambiance que vous n'oublierais jamais.</p>
+    </div>
+    <section class="avantages">
+        <div class="carte-avantage">
+            <h3>Produits frais</h3>
+            <p>Nous travaillons avec des producteurs locaux pour garantir la fraîcheur de nos plats .</p>
+
+        </div>
+        <div class="carte-avantage">
+            <h3>Ambiance</h3>
+            <p>Un cadre chaleureux pour tous vos moments de détente.</p>
+
+        </div>
+        <div class="carte-avantage">
+            <h3>Carte variée</h3>
+            <p>Une sélection pour tous les goûts.</p>
+
+            <div class="carte-avantage">
+                <h3>Des Moments spéciaux</h3>
+                <p>Organisez vos événements privés dans un cadre idéal.</p>
+
+            </div>
+    </section>
+
+    <section class="specialites">
+        <div class="section-titre">
+            <h2>Nos spécialités</h2>
+            <p>Les plats phares qui font notre renommée.</p>
+        </div>
+        <div class="grille-specialites">
+            <div class="plat-card">
+                <img src="https://i.pinimg.com/736x/7b/e8/3e/7be83eefd1a62e4e9aefce26fb5432f8.jpg"
+                    alt="Poulet rôti">
+                <div class="plat-info">
+                    <h4>Poulet rôti aux herbes</h4>
+
+                </div>
+            </div>
+            <div class="plat-card">
+                <img src="https://i.pinimg.com/736x/35/14/16/3514160683acb5fd83b4f680fb8b92ac.jpg"
+                    alt="Pâtes">
+                <div class="plat-info">
+                    <h4>Pâtes crémeuses</h4>
+
+                </div>
+            </div>
+            <div class="plat-card">
+                <img src="https://i.pinimg.com/736x/24/d1/51/24d15175d76a25238ea9f17eca543f21.jpg"
+                    alt="Poisson">
+                <div class="plat-info">
+                    <h4>Poisson grillé</h4>
+
+                </div>
+            </div>
+            <div class="plat-card">
+                <img src="https://assets.afcdn.com/story/20220523/2174529_w2121h2121c1cx1061cy707cxt0cyt0cxb2121cyb1414.jpg"
+                    alt="Salade">
+                <div class="plat-info">
+                    <h4>Salade fraîcheur</h4>
+
+                </div>
+            </div>
+            <div class="plat-card">
+                <img src="https://i.pinimg.com/1200x/21/68/ad/2168ada792943e89d9c2a2c162cd2bc9.jpg"
+                    alt="Assiette">
+                <div class="plat-info">
+                   <h4>Assiette decouverte</h4>
+
+                </div>
+            </div>
+            <div class="plat-card">
+                <img src="https://i.pinimg.com/736x/d0/12/6c/d0126c121dd390b98eca1d7a0c356f3b.jpg" alt="Dessert">
+                <div class="plat-info">
+                    <h4>Dessert signature</h4>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="reservation">
+        <h2>Réservez votre table</h2>
+    
+        <p>Nous avons hâte de vous recevoir pour une plus d'expérience mémorable que vous n'allez jamais oublier durant
+            toutes votres vie.</p> 
+            
+            
+            
+    
+
+
+
+        <div class="info-contact">
+            <p> +221 77 000 00 00</p>
+            <p>contact@lejardingourmet.com</p>
+            <p> Dakar, Sénégal</p>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
